@@ -51,15 +51,9 @@ int main() {
 
 	CurrentTime(hour, minutes, seconds);
 	
-	while (selection != 5) {
+	while ((selection != 5) && (hour > -1) && (minutes > -1) && (seconds > -1) && (hour < 25) && (minutes < 60) && (seconds < 60)) {
 		if (selection == 4) {
-			cout << setfill(' ') << "Please select 1 - 4: " << endl;
-			cout << "*************************" << endl;
-			cout << setw(13) << left << "* 1 - Add One Hour" << setw(7) << right << "*" << endl;
-			cout << setw(13) << left << "* 2 - Add One Minute" << setw(5) << right << "*" << endl;
-			cout << setw(13) << left << "* 3 - Add One Second" << setw(5) << right << "*" << endl;
-			cout << setw(13) << left << "* 4 - Menu" << setw(12) << right << "*" << endl;
-			cout << setw(13) << left << "* 5 - Exit Program" << setw(7) << right << "*" << endl;
+			Menu();
 
 			cin >> selection;
 		}
@@ -91,9 +85,16 @@ int main() {
 		}
 
 		else if (selection == 5) {
-			cout << "Quitting program" << endl;
+			cout << "Error occurred. Quitting program..." << endl;
 			break;
 		}
 	}
+
+	if ((hour < -1) || (minutes, -1) || (seconds > -1) || (hour > 23) || (minutes > 59) || (seconds > 59)) {
+		cout << "Invalid time. Please run the program again." << endl;
+	}
+
+	cout << "Quitting Program..." << endl;
+
 	return 0;
 }
