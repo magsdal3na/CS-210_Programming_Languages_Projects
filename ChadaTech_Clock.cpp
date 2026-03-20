@@ -16,7 +16,7 @@ void CurrentTime(double hour, double minutes, double seconds, double militaryHou
 	cout << "*        " << setw(2) << setfill('0') << hour << ":" << setw(2) << setfill('0') << minutes << ":";
 	cout << setw(2) << setfill('0') << seconds << "       *" << "   ";
 	cout << "*        " << setw(2) << setfill('0') << militaryHour << ":" << setw(2) << setfill('0') << minutes << ":";
-	cout << setw(2) << setfill('0') << seconds << "       *" << endl;
+	cout << setw(2) << setfill('0') << seconds << "       *" << setfill(' ') << endl;
 	cout << "*************************" << "   " << "*************************" << endl;
 }
 
