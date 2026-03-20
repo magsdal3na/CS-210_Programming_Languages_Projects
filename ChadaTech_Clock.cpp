@@ -62,24 +62,38 @@ int main() {
 			hour = hour + 1;
 			MilitaryHour(hour);
 			CurrentTime(hour, minutes, seconds);
-			cout << "Please select 1 - 5 from the menu: " << endl;
+			cout << "Please select 4 to show the menu or enter another option: " << endl;
+			cout << ">>";
 
 			cin >> selection;
 		}
 
 		else if (selection == 2) {
 			minutes = minutes + 1;
-			MilitaryHour(hour);
+			if (minutes > 59) {
+				minutes = 0;
+				seconds = 0;
+				hour = hour + 1;
+				MilitaryHour(hour);
+			}
 			CurrentTime(hour, minutes, seconds);
-			cout << "Please select 1 - 5 from the menu: " << endl;
+			cout << "Please select 4 to show the menu or enter another option: " << endl;
+			cout << ">>";
 
 			cin >> selection;
 		}
 
 		else if (selection == 3) {
 			seconds = seconds + 1;
+			if (seconds > 59) {
+				seconds = 0;
+				minutes = 0;
+				hour = hour + 1;
+				MilitaryHour(hour);
+			}
 			CurrentTime(hour, minutes, seconds);
-			cout << "Please select 1 - 5 from the menu: " << endl;
+			cout << "Please select 4 to show the menu or enter another option: " << endl;
+			cout << ">>";
 
 			cin >> selection;
 		}
