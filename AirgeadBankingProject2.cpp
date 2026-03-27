@@ -129,8 +129,13 @@ int main() {
 		DataInput(investment, monthlyDeposit, annualInterest, numOfYears);
 		BalanceScreenWithout(investment, monthlyDeposit, annualInterest, numOfYears);
 		BalanceScreenWith(investment, monthlyDeposit, annualInterest, numOfYears);
-		break;
+		cout << endl;
+		cout << "Please enter 1 if you would like to continue: " << endl;
+		cout << ">>";
+		cin >> selection;
 	}
+
+	cout << "Quitting program. . ." << endl;
 
 	return 0;
 }
