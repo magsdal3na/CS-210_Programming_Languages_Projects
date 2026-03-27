@@ -56,22 +56,27 @@ void DataInput(double& investment, double& monthlyDeposit, double& annualInteres
 
 //outputs balance screen without additional monthly deposits
 void BalanceScreenWithout(double& investment, double& monthlyDeposit, double& annualInterest, int& numOfYears) {
-	vector<double> yearsVec(numOfYears);
-	unsigned int i;
-
-	for (i = 1; i < yearsVec.size(); ++i) {
-		yearsVec.at(i);
-	}
+	double currentBalance = investment;
+	double yearlyInterest;
 	
+	//print headers
 	cout << setfill(' ') << setw(4) << "" << "Balance and Interest Without Additional Monthly Deposits" << setw(5) << "" << endl;
 	cout << setfill('=') << setw(65) << "" << endl;
 	cout << setfill(' ') << setw(2) << "" << "Year" << "      " << "Year End Balance" << "          " << "Year End Earned Interest" << setw(5) << "" << endl;
 	cout << setfill('-') << setw(65) << "" << endl;
-	cout << setfill(' ') << setw(2) << "" << yearsVec.at(0) << "      " << endl;
-	cout << setfill(' ') << setw(2) << "" << yearsVec.at(1) << "      " << endl;
-	cout << monthlyDeposit << endl;
-	cout << annualInterest << endl;
-	cout << numOfYears << endl;
+
+	//iterate through each year
+	cout << fixed << setprecision(2); //for currency output
+
+	for (int i = 1; i <= numOfYears; ++i) {
+		yearlyInterest = currentBalance * (annualInterest / 100.0);
+		currentBalance = currentBalance + yearlyInterest;
+
+		//output w/ alignment
+		cout << setfill(' ') << "  " << i
+			<< "         " << "$" << currentBalance
+			<< "                   " << "$" << yearlyInterest << endl;
+	}
 }
 
 int main() {
