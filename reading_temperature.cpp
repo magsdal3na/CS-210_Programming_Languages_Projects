@@ -27,15 +27,6 @@ int main() {
 	}
 
 	//reading and printing input to output
-	while (!inFS.eof()) {
-		inFS >> city;
-		inFS >> tempFahrenheit;
-
-		if (!inFS.fail()) {
-			cout << city << " " << tempFahrenheit << endl;
-		}
-	}
-
 	while (inFS >> city >> tempFahrenheit) {
 		//perform conversion
 		tempCelsius = (tempFahrenheit - 32.0) * (5.0 / 9.0);
