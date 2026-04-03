@@ -1,13 +1,14 @@
-#ifndef INVESTMENT_H_
-#define INVESTMENT_H_
+#ifndef AIRGEAD_BANKING_PROJECT_2_INVESTMENT_H_
+#define AIRGEAD_BANKING_PROJECT_2_INVESTMENT_H_
 
 class Investment {
 	public:
-		//constructor
+		//default constructor to initialize values
 		Investment();
 
-		//input methods
+		//input method for user
 		void promptForData();
+		//display values after calculation
 		void displayWithoutDeposits();
 		void displayWithDeposits();
 
@@ -18,4 +19,4 @@ class Investment {
 		int m_numOfYears;
 };
 
-#endif
+#endif //AIRGEAD_BANKING_PROJECT_2_INVESTMENT_H_
